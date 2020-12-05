@@ -18,16 +18,6 @@ To clean of all intermediate and final files use:
 make clean
 ```
 
-# Why Lua?
-
-[Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)) is a fast, highly embeddable VM that boasts a wide set of features allowing it to be adapted to a diverse set of domains and platforms.
-
-* Can be run in 400kb of memory or less
-* Multi-paradigm via metatables, closures and coroutines
-* Robust, proven VM that's shipped on platforms including MIPS, x86, ARM and many others(and now WASM!)
-* Small, easy to understand language
-* Extensible debugger hooks for easy on-target debugging
-
 # Files
 
 * index.html: test page and useage example
@@ -41,7 +31,15 @@ This is where you generate the webassemby binary and main.js if you decide to mo
 - main.c: export lua C function to javascript
 - demolib.c: helper to main that enables alerts on the browser via `alert("Somthing")` when written in the textbox
 - makefile: emcc config (which function to export, init function name, ...etc.)
-- lua-: lua source code without any modify except to the makefile
+- lua-5.40: lua source code without any modify except to the makefile
 
 \* Technically, lua-5.4.0 and c files not needed to run file as the main.wasm is the byte code understood by the browser 
 
+# Why Lua?
+
+* [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)) is a fast, highly embeddable VM that boasts a wide set of features allowing it to be adapted to a diverse set of domains and platforms.
+* Can be run in 400kb of memory or less
+* Multi-paradigm via metatables, closures and coroutines
+* Robust, proven VM that's shipped on platforms including MIPS, x86, ARM and many others(and now WASM!)
+* Small, easy to understand language
+* Extensible debugger hooks for easy on-target debugging
