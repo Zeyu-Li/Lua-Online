@@ -1,3 +1,4 @@
 **/*.o
 **/*.a
 lua-*/**/*.wasm
+.vscode/
