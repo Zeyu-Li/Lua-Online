@@ -6,10 +6,16 @@ WebAssembly for Lua Code editor website: https://zeyu-li.github.io/wasm_lua/inde
 
 Forked from https://github.com/vvanders/wasm_lua -> https://github.com/Dreagonmon/wasm_lua
 
-To remake do
+To remake do:
 
 ```sh
 make all
+```
+
+To clean of all intermediate and final files use:
+
+```sh
+make clean
 ```
 
 # Why Lua?
