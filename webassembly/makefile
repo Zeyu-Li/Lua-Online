@@ -6,3 +6,6 @@ main.o: main.c lua
 
 lua:
 	cd lua-5.4.0/src && make generic CC='emcc -s WASM=1'
+
+clean:
+	rm main.wasm main.js && cd lua-5.4.0/src && make clean
