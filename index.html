@@ -2,10 +2,26 @@
 <meta charset="utf-8">
 
 <head>
+  <!-- meta data -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Lua Online</title>
+
+  <meta name="author" content="Andrew Li">
+  <meta name="description" content="Lua Online, Run Lua online now">
+  <meta name="keywords" content="lua coding online">
+  <meta property="og:image" content="img/ico.svg">
+
+  <!-- Mini icon on tab -->
+  <link rel="icon" href="img/ico.svg" type="image/ico">
+  <!-- Initiates WebAssembly -->
   <script src="main.js"></script>
   <script>
-    var Module = undefined;
-    var timer;
+    // TODO: change timer to run button
+    let Module = undefined;
+    let timer;
     function text_changed() {
       clearTimeout(timer);
       input = document.getElementById("edit").value;
@@ -17,11 +33,11 @@
     }
 
     // init wasm module
-    var ModuleConfig = {
+    let ModuleConfig = {
       print: (function () {
         return function (text) {
           if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-          console.log(text);
+          // console.log(text);
 
           if (text != "emsc")
             document.getElementById("result").innerHTML += "<br>\n" + text;
@@ -48,14 +64,15 @@
 <body>
   <div>
     <textarea id="edit" style="width: 800px; height: 480px;" onkeyup="text_changed();">
+
 function hello_lua()
     print "Hello Lua!"
     print(_VERSION)
-    alert("this alert is from lua")
 end
 
 hello_lua()
-return "this is return value"</textarea>
+return "this is return value"
+</textarea>
     <div id="result" style="width: 800px; float: right"></div>
   </div>
 </body>
