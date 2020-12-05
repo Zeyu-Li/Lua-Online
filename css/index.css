@@ -8,7 +8,7 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: minmax(150px, 70%) 1fr;
+    grid-template-columns: minmax(150px, 65%) 1fr;
     padding: 0;
     margin: 0;
 }
@@ -20,11 +20,23 @@ body {
     border: none;
 }
 
+/* code mirror */
 .CodeMirror {
     height: 100vh!important;
+    font-size: 16px;
 }
+.CodeMirror-lines {
+    height: 100%;
+    padding: 10px 0;
+}
+.CodeMirror pre {
+    padding: 0 10px;
+}
+
 #result {
+    font-family: Arial, monospace;;
     float: left;
     padding: 1em;
     color: white;
+    font-size: 16px;
 }

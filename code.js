@@ -32,9 +32,9 @@ let ModuleConfig = {
 function main() {
     // starting text
     let starting_text = `function hello_lua()
-    print "Hello User!"
-    print("Using", _VERSION)
-	return "Hit Ctrl-B to rebuild"
+  print "Hello User!"
+  print("Using", _VERSION)
+return "Hit Ctrl-B to rebuild"
 end
 
 return hello_lua()`
