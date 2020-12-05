@@ -1,12 +1,10 @@
 # WebAssembly Lua
 
-WebAssembly for Lua
+WebAssembly for Lua Code editor website: https://zeyu-li.github.io/wasm_lua/index.html
 
 
 
 Forked from https://github.com/vvanders/wasm_lua -> https://github.com/Dreagonmon/wasm_lua
-
-
 
 To remake do
 
@@ -18,18 +16,26 @@ make all
 
 [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)) is a fast, highly embeddable VM that boasts a wide set of features allowing it to be adapted to a diverse set of domains and platforms.
 
-* Can be run in 400kb of memory or less.
-* Multi-paradigm via metatables, closures and coroutines.
-* Robust, proven VM that's shipped on platforms including MIPS, x86, ARM and many others(and now WASM!).
-* Small, easy to understand language.
-* Extensible debugger hooks for easy on-target debugging.
-
-Thanks to [rawgit](http://rawgit.com/) for hosting.
+* Can be run in 400kb of memory or less
+* Multi-paradigm via metatables, closures and coroutines
+* Robust, proven VM that's shipped on platforms including MIPS, x86, ARM and many others(and now WASM!)
+* Small, easy to understand language
+* Extensible debugger hooks for easy on-target debugging
 
 # Files
 
-- main.js, main.wasm: auto-generated
+* index.html: test page and useage example
+* main.js: auto-generated js 
+*  main.wasm: auto-generated binary 
+
+### Webassembly
+
+This is where you generate the webassemby binary and main.js if you decide to modify the lua code or update the webassembly in main.c and demolib.c
+
 - main.c: export lua C function to javascript
-- index.html: test page and useage example
+- demolib.c: helper to main that enables alerts on the browser via `alert("Somthing")` when written in the textbox
 - makefile: emcc config (which function to export, init function name, ...etc.)
-- lua-: lua source code without any modify
+- lua-: lua source code without any modify except to the makefile
+
+\* Technically, lua-5.4.0 and c files not needed to run file as the main.wasm is the byte code understood by the browser 
+
