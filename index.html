@@ -2,79 +2,39 @@
 <meta charset="utf-8">
 
 <head>
-  <!-- meta data -->
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Lua Online</title>
+    <title>Lua Online</title>
 
-  <meta name="author" content="Andrew Li">
-  <meta name="description" content="Lua Online, Run Lua online now">
-  <meta name="keywords" content="lua coding online">
-  <meta property="og:image" content="img/ico.svg">
+    <meta name="author" content="Andrew Li">
+    <meta name="description" content="Lua Online, Run Lua online now">
+    <meta name="keywords" content="lua coding online">
+    <meta property="og:image" content="img/ico.svg">
 
-  <!-- Mini icon on tab -->
-  <link rel="icon" href="img/ico.svg" type="image/ico">
-  <!-- Initiates WebAssembly -->
-  <script src="main.js"></script>
-  <script>
-    // TODO: change timer to run button
-    let Module = undefined;
-    let timer;
-    function text_changed() {
-      clearTimeout(timer);
-      input = document.getElementById("edit").value;
-      timer = setTimeout(function () {
-        document.getElementById("result").innerHTML = "";
-        Module.ccall("run_lua", 'number', ['string'], [input]);
-      },
-      750);
-    }
+    <!-- Mini icon on tab -->
+    <link rel="icon" href="img/ico.svg" type="image/ico">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <!-- code mirror -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.css" integrity="sha512-xIf9AdJauwKIVtrVRZ0i4nHP61Ogx9fSRAkCLecmE2dL/U8ioWpDvFCAy4dcfecN72HHB9+7FfQj3aiO68aaaw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/codemirror.min.js" integrity="sha512-zuvaVNiXwWY7U7HEdXsoTislTEElpKLELFoyQw0Bg7zfGhC4vG8eAhCxIQAvHmprW7dFhTq5zshUko4K3B4mSA==" crossorigin="anonymous"></script>
+    <!-- lua theme -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/mode/lua/lua.min.js" integrity="sha512-y9AUtl0J5yAFGJx0mcdHPVsba97LmWZ+00K+w78g3cx9klrn/5joZCH/KegMwhSnliF17Z46A50X773374wA/w==" crossorigin="anonymous"></script>
+    <!-- theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.58.3/theme/cobalt.min.css" integrity="sha512-dAYwzcmdv0GvCo9UJmVP430Mc9kmvpdDVk/pHNG90qTZR6tpHQlR9BsVdK9ZGpnNtQNVl+j7UQppCwOPN0TTNQ==" crossorigin="anonymous" />
 
-    // init wasm module
-    let ModuleConfig = {
-      print: (function () {
-        return function (text) {
-          if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-          // console.log(text);
-
-          if (text != "emsc")
-            document.getElementById("result").innerHTML += "<br>\n" + text;
-        };
-      })(),
-      printErr: function (text) {
-        if (arguments.length > 1) text = Array.prototype.slice.call(arguments).join(' ');
-        if (0) { // XXX disabled for safety typeof dump == 'function') {
-          dump(text + '\n'); // fast, straight to the real console
-        } else {
-          console.error(text);
-        }
-      }
-    };
-
-    // initWasmModule function name configured in makefile
-    initWasmModule(ModuleConfig).then((aModule) => {
-      Module = aModule;
-      text_changed();
-    });
-  </script>
+    <!-- Initiates WebAssembly -->
+    <script src="webassem.js"></script>
 </head>
 
 <body>
-  <div>
-    <textarea id="edit" style="width: 800px; height: 480px;" onkeyup="text_changed();">
-
-function hello_lua()
-    print "Hello Lua!"
-    print(_VERSION)
-end
-
-hello_lua()
-return "this is return value"
-</textarea>
-    <div id="result" style="width: 800px; float: right"></div>
-  </div>
+    <div class="main">
+        <div id="input"></div>
+        <div id="result"></div>
+    </div>
+    <!-- jquery -->
+    <script src="code.js"></script>
 </body>
-
 </html>

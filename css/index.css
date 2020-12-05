@@ -1,0 +1,30 @@
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.main {
+    display: grid;
+    grid-template-columns: minmax(150px, 70%) 1fr;
+    padding: 0;
+    margin: 0;
+}
+
+#input {
+    height: 100vh;
+    outline: none;
+    resize: none;
+    border: none;
+}
+
+.CodeMirror {
+    height: 100vh!important;
+}
+#result {
+    float: left;
+    padding: 1em;
+    color: white;
+}
