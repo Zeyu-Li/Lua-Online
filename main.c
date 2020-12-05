@@ -5,10 +5,12 @@
 #include "demolib.c"
 
 int run_lua(const char* script) {
+	// instantates lua
 	lua_State* lua = luaL_newstate();
 
+	char alert[] = "alert";
 	/* register demo library written in C, and call javascript */
-	lua_register(lua,"alert",lua_alert); // lua_alert function defined in demolib.c
+	lua_register(lua, alert, lua_alert); // lua_alert function defined in demolib.c
 
 	luaL_openlibs(lua);
 
@@ -17,8 +19,9 @@ int run_lua(const char* script) {
 	size_t len = 0;
 	const char* value = lua_tolstring(lua, lua_gettop(lua), &len);
 
-	printf("return value: %s\n", value);
+	printf("Code exited with: %s\n", value);
 
+	// close lua
 	lua_close(lua);
 
 	return 0;

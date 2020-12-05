@@ -1,7 +1,7 @@
 #include <lauxlib.h>
-/* use emscripten to execute javascript */
 #include "emscripten.h"
 
+/* use emscripten to execute javascript alerts */
 EM_JS(void, js_alert, (const char* message), {
     alert(UTF8ToString(message));
 });
