@@ -1,4 +1,4 @@
-
+/* main */
 body {
     padding: 0;
     margin: 0;
@@ -11,13 +11,6 @@ body {
     grid-template-columns: minmax(150px, 65%) 1fr;
     padding: 0;
     margin: 0;
-}
-
-#input {
-    height: 100vh;
-    outline: none;
-    resize: none;
-    border: none;
 }
 
 /* code mirror */
@@ -33,10 +26,19 @@ body {
     padding: 0 10px;
 }
 
+/* input/output (io) */
+#input {
+    height: 100vh;
+    outline: none;
+    resize: none;
+    border: none;
+}
 #result {
     font-family: Arial, monospace;;
     float: left;
     padding: 1em;
     color: white;
     font-size: 16px;
+    z-index: 10;
+    box-shadow: 16px 0 16px 12px rgba(0, 0, 0, 1);
 }

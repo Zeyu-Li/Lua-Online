@@ -48,12 +48,6 @@ return hello_lua()`
         mode: "lua",
         theme: "cobalt"
     })
-    
-    // TODO: check f2 to run or something like that
-    // check keypress
-    // editor.on('keypress', function(instance, event) {
-    //     console.log(instance, event);
-    // });
 
     // debug
     // console.log(editor.getValue());
@@ -61,6 +55,7 @@ return hello_lua()`
 }
 
 // event listeners
+// is user presses ctrl-b, then rebuild
 document.addEventListener("keydown", function(e){
     if(e.ctrlKey && e.keyCode == 66) {
         e.preventDefault();
