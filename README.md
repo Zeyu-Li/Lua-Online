@@ -35,6 +35,12 @@ This is where you generate the webassemby binary and main.js if you decide to mo
 
 \* Technically, lua-5.4.0 and c files not needed to run file as the main.wasm is the byte code understood by the browser 
 
+## Dependencies
+
+* Lua source (built from source)
+* emscripten (https://emscripten.org/docs/getting_started/downloads.html)
+* CodeMirror for online editor https://codemirror.net/
+
 # Why Lua?
 
 * [Lua](https://en.wikipedia.org/wiki/Lua_(programming_language)) is a fast, highly embeddable VM that boasts a wide set of features allowing it to be adapted to a diverse set of domains and platforms.
