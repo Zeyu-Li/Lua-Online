@@ -30,11 +30,20 @@
 </head>
 
 <body>
+    <!-- main code -->
     <div class="main">
         <div id="input"></div>
-        <div id="result"></div>
+        <div id="result"><p id="output"></p></div>
     </div>
-    <!-- main code -->
+    
+    <!-- 3 buttons, 1 (+) add item, 1 (-) remove item, and 1 to enable help -->
+    <div class="buttons">
+        <ul>
+            <li id="first"><button id="build" type="button" title="Build" onclick="build()"><b>B</b></button></li>
+            <li id="second"><a id="download_file" download="main.lua"><button id="download" type="button" title="Download" onclick="download()"><b>S+</b></button></a></li>
+        </ul>
+    </div>
+    <!-- end of main code -->
     <script src="code.js"></script>
 </body>
 </html>

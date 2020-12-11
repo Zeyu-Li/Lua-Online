@@ -18,6 +18,23 @@ To clean of all intermediate and final files use:
 make clean
 ```
 
+## Features
+
+```lua
+alert("Hello World!") 	-- works in creating an alert event in the browser
+io.read() 				-- reads from browser with an alert popup (very buggy)
+```
+
+`ctrl-space` brings up autocomplete
+
+
+
+## Demo
+
+![snapshot](img/snapshot.jpg)
+
+
+
 # Files
 
 * index.html: test page and useage example

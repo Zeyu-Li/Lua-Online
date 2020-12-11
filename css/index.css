@@ -8,9 +8,16 @@ body {
 
 .main {
     display: grid;
-    grid-template-columns: minmax(150px, 65%) 1fr;
+    grid-template-columns: minmax(150px, 70%) 1fr;
     padding: 0;
     margin: 0;
+}
+
+.transition, #build, #download {
+    transition: .2s;
+    -moz-transition: .2s;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
 }
 
 /* code mirror */
@@ -28,17 +35,75 @@ body {
 
 /* input/output (io) */
 #input {
+    z-index: 1;
     height: 100vh;
     outline: none;
     resize: none;
     border: none;
 }
 #result {
-    font-family: Arial, monospace;;
+    color: white;
+    background-color: black;
+    z-index: 1;
+    overflow-y: auto;
+    font-family: Arial, monospace;
+    font-size: 16px;
+    max-height: 95vh;
     float: left;
     padding: 1em;
-    color: white;
-    font-size: 16px;
-    z-index: 10;
-    box-shadow: 16px 0 16px 12px rgba(0, 0, 0, 1);
+}
+
+/* buttons */
+.buttons ul {
+    text-align: center;
+}
+.buttons ul li {
+    margin-top: 10px;
+}
+.buttons ul button {
+    width: 65px;
+    height: 65px;
+    border-radius: 50px;
+    cursor: pointer;
+    border: none;
+}
+.buttons {
+    z-index: 2;
+    position: sticky;
+    bottom: 5vh;
+    margin-right: 2vw;
+    float: right;
+}
+#build {
+    background-color: rgb(113, 148, 224);
+}
+#build:hover {
+    background-color: rgb(72, 113, 202);
+}
+#download {
+    background-color: rgb(88, 211, 72);
+}
+#download:hover {
+    background-color: rgb(62, 184, 46);
+}
+
+/* when less than 700px change to top down */
+@media only screen and (max-width: 700px) {
+    .main {
+        grid-template-columns: none;
+        grid-template-rows: 70vh 30vh;
+    }
+    .CodeMirror {
+        height: 70vh!important;
+        font-size: 16px;
+    }
+    
+    #input {
+        height: 70vh!important;
+    }
+    
+    #result {
+        max-height: 30vh;
+        width: 95vw;
+    }
 }
