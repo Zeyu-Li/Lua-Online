@@ -25,7 +25,7 @@ alert("Hello World!") 	-- works in creating an alert event in the browser
 io.read() 				-- reads from browser with an alert popup (very buggy)
 ```
 
-`ctrl-space` brings up autocomplete
+Infinite loops do not work because of js event loop
 
 
 
