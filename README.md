@@ -1,6 +1,6 @@
 # WebAssembly Lua
 
-WebAssembly for Lua Code editor website: https://zeyu-li.github.io/lua-online/
+WebAssembly for Lua Code editor website: https://zeyu-li.github.io/Lua-Online/
 
 
 
