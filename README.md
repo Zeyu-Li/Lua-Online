@@ -37,7 +37,7 @@ Infinite loops do not work because of js event loop
 
 # Files
 
-* index.html: test page and useage example
+* index.html: test page and usage example
 * main.js: auto-generated js 
 *  main.wasm: auto-generated binary 
 
@@ -46,7 +46,7 @@ Infinite loops do not work because of js event loop
 This is where you generate the webassemby binary and main.js if you decide to modify the lua code or update the webassembly in main.c and demolib.c
 
 - main.c: export lua C function to javascript
-- demolib.c: helper to main that enables alerts on the browser via `alert("Somthing")` when written in the textbox
+- demolib.c: helper to main that enables alerts on the browser via `alert("Something")` when written in the textbox
 - makefile: emcc config (which function to export, init function name, ...etc.)
 - lua-5.40: lua source code without any modify except to the makefile
 
